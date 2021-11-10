@@ -3,8 +3,7 @@ import Loading from "./Loading";
 import axios from "axios";
 import Tours from "./Tours";
 import Error from "./Error";
-
-import { useQuery } from "react-query";
+import useFetch from "./useFetch";
 
 const url = "http://localhost:4000/tours";
 const fetchTours = async () => {
@@ -12,7 +11,11 @@ const fetchTours = async () => {
 };
 
 const App = () => {
-  const { isLoading, isError, data: tours } = useQuery("tours", fetchTours);
+  const props = {
+    name: "tours",
+    fetchData: fetchTours,
+  };
+  const { isLoading, isError, data: tours } = useFetch(props);
 
   const removeTour = (id) => {
     return tours?.data.filter((tour) => tour.id !== id);
