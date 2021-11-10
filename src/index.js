@@ -1,11 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/style.scss';
-import App from './components/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/style.scss";
+import App from "./components/App";
+import Query from "./components/Query";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Query>
+      <App />
+    </Query>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
