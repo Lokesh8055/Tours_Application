@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import axios from "axios";
 import Tours from "./Tours";
 import Error from "./Error";
+import Typography from "@mui/material";
 import useFetch from "./useFetch";
 
 const url = "http://localhost:4000/tours";
